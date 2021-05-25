@@ -1,0 +1,244 @@
+:root {
+   --primary: linear-gradient( to right, hsl(6, 100%, 80%), hsl(335, 100%, 65%));
+   --neutral1: hsl(243, 100%, 93%);
+   --neutral2: hsl(229, 7%, 55%);
+   --neutral3: hsl(228, 56%, 26%);
+   --neutral4: hsl(229, 57%, 11%);
+}
+
+* {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+}
+
+html {
+   font-size: 62.5%;
+}
+
+body {
+   font-size: 1.4rem;
+   font-family: 'Raleway', sans-serif;
+   color: var(--neutral1);
+   background-image: url('./images/bg-mobile.png');
+   background-repeat: no-repeat;
+   background-position: center;
+   background-size: cover;
+}
+
+img {
+   max-width: 100%;
+}
+
+
+/* Utilities */
+.container {
+   width: 90%;
+   margin: 0 auto;
+}
+
+@media (min-width: 425px) {
+   .container {
+      width: 70%;
+   }
+}
+
+
+/*** Mobile First Styles ***/
+.main {
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   height: 100vh;
+}
+
+.buttons {
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   min-width: 32rem;
+   max-width: 50rem;
+   height: 20rem;
+   padding: 4rem 10rem 4rem 4rem;
+   background-color: var(--neutral3);
+   border-radius: 1rem 10rem 1rem 1rem;
+}
+
+.logo-container {
+   margin-bottom: 3rem;
+}
+
+.actions-container {
+   display: flex;
+   justify-content: space-evenly;
+}
+
+.action {
+   padding: 1rem 1.3rem;
+   background-color: var(--neutral4);
+   border-radius: 1rem;
+}
+
+.action:nth-child(2),
+.action:nth-child(3) {
+   padding-top: 1.5rem;
+}
+
+
+/* Storage section */
+.storage {
+   position: relative;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   min-width: 32rem;
+   max-width: 50rem;
+   height: 16rem;
+   margin-top: 1.5rem;
+   padding: 3rem 3rem 5rem; 
+   background-color: var(--neutral3);
+   border-radius: 1rem;
+}
+
+.storage__info {
+   text-align: center;
+   margin-bottom: 2rem;
+}
+
+.storage__used {
+   font-weight: 700;
+}
+
+/* progressive bar */
+.bar {
+   width: 100%;
+   height: 1.5rem;
+   margin-bottom: 1rem;
+   background-color: var(--neutral4);
+   border-radius: 1rem;
+   overflow: hidden;
+}
+
+.progress {
+   position: relative;
+   width: 74%;
+   height: 100%;
+   margin-bottom: 1rem;
+   background-image: var(--primary);
+   border-radius: 1rem;
+}
+
+/* dot after progress bar */
+/*copied ↓ from "soqk" | Frontend Mentor*/
+.progress::after {
+   position: absolute;
+   top: 0;
+   right: 0;
+   width: 15px;
+   height: 100%;
+   content: "";
+   background-color: white;
+   border-radius: 50%;
+}
+
+.bar-info {
+   display: flex;
+   justify-content: space-between;
+   font-size: 1.3rem;
+   font-weight: 700;
+}
+
+.storage-left {
+   position: absolute;
+   bottom: -3.5rem;
+   left: calc(50% - 10rem);
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   width: 18rem;
+   height: 7.5rem;
+   background-color: white;
+   border-radius: 1rem;
+}
+
+.storage-left__info {
+   display: flex;
+   align-items: center;
+   gap: .5rem;
+   font-size: 4rem;   
+   font-weight: 700;
+   color: var(--neutral4);
+}
+
+.storage-left__text {
+   font-size: 1.2rem;
+   font-weight: 700;
+   text-transform: uppercase;
+   color: var(--neutral2); 
+}
+
+/*** Media Queries ***/
+@media (min-width: 800px) {
+   .container {
+      margin: 0;
+   }
+   .main {
+      flex-direction: row;
+      align-items: center;
+      gap: 1.5rem;
+   }
+
+   .buttons {
+      max-width: 32rem;
+   }
+
+   .storage {
+      min-width: 45rem;
+      max-width: 40%;
+      margin-top: 4rem;
+   }
+
+   .storage__info {
+      text-align: left;
+   }
+
+   .storage-left {
+      bottom: 85%;
+      left: 53%;
+   }
+
+   .storage-left::after {
+      position: absolute;
+      bottom: -1.1rem;
+      right: 0;
+      content: "";
+      border-width: 1rem;
+      border-style: solid;
+      border-color: white white transparent transparent;
+   }
+}
+
+@media (min-width: 1200px) {
+   .storage-left {
+      left: 63%;
+   }
+}
+
+
+
+
+/* Atributtion */
+.attribution {
+   width: 100%;
+   font-size: 1.3rem;
+   position: absolute;
+   bottom: .5rem;
+   text-align: center;
+}
+
+.enlace {
+   color: yellow;
+}
+
+
+
